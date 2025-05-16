@@ -26,7 +26,6 @@ while (true)
 
     Console.WriteLine($"{command}: command not found");
 
-    Console.Write("$ exit");
-    return;
+   // return;
 
 }
