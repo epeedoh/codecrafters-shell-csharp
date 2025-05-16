@@ -20,11 +20,16 @@ while (true)
     //    return;
 
     if (string.IsNullOrEmpty(command) || command.ToLower() == "exit")
-       return;
+    {
+        Console.WriteLine("exit 0");
+        return;
+    }
+      
 
    
 
     Console.WriteLine($"{command}: command not found");
+
 
    // return;
 
