@@ -18,8 +18,7 @@ while (true)
 
 
 
-    //if (string.IsNullOrEmpty(command) || command.ToLower() == "exit 0")
-    //    break;
+    
     if (string.IsNullOrEmpty(command) || command.ToLower() == "exit 0")
         break;
 
