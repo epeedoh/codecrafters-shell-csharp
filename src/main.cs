@@ -26,12 +26,18 @@ while (true)
     {
         command = command.Replace("echo ", "");
           Console.WriteLine(command);
+    }else if(command.Contains("type "))
+    {
+        command = command.Replace("type ", "");
+
+        Console.WriteLine(command + " is a shell builtin");
     }
-       
+
     else {
       Console.WriteLine($"{command}: command not found");
     }
      
+ 
 
    
 
