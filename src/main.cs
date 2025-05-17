@@ -21,7 +21,7 @@ while (true)
 
     if (string.IsNullOrEmpty(command) || command.ToLower() == "exit 0")
     {
-        Console.Write("exit 0");
+       // Console.Write("exit 0");
         break;
     }
       
