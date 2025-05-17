@@ -19,7 +19,7 @@ while (true)
     //if (command == "exit")
     //    return;
 
-    if (string.IsNullOrEmpty(command) || command.ToLower() == "exit")
+    if (string.IsNullOrEmpty(command) || command.ToLower() == "exit 0")
     {
         Console.Write("exit 0");
         break;
