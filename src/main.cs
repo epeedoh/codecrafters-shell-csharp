@@ -30,7 +30,7 @@ while (true)
     }
      
 
-     if (command.ToLower() == "exit 0")
+     if (string.IsNullOrEmpty(command) || command.ToLower() == "exit 0")
         break;
 
    // return;
