@@ -16,20 +16,22 @@ while (true)
     // Wait for user input
     String? command = Console.ReadLine()?.Trim();
 
-    //if (command == "exit")
-    //    return;
 
-    if (string.IsNullOrEmpty(command) || command.ToLower() == "exit 0")
+
+    //if (string.IsNullOrEmpty(command) || command.ToLower() == "exit 0")
+    //    break;
+    if (command.Contains("echo "))
     {
-       // Console.Write("exit 0");
-        break;
+          Console.WriteLine(command);
     }
-      
+       
+    else {
+      Console.WriteLine($"{command}: command not found");
+    }
+     
 
-   
-
-    Console.WriteLine($"{command}: command not found");
-
+     if (command.ToLower() == "exit 0")
+        break;
 
    // return;
 
