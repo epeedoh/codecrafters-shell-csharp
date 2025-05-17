@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 
@@ -16,7 +17,7 @@ while (true)
     // Wait for user input
     String? command = Console.ReadLine()?.Trim();
 
-
+    var listCommands = new List<string> { "echo", "type", "exit" };
 
     
     if (string.IsNullOrEmpty(command) || command.ToLower() == "exit 0")
@@ -30,11 +31,18 @@ while (true)
     {
         command = command.Replace("type ", "");
 
-        Console.WriteLine(command + " is a shell builtin");
+        var existCommand = listCommands.FirstOrDefault(x => x == command);
+
+        if (existCommand != null)
+            Console.WriteLine(command + " is a shell builtin");
+        else
+            Console.WriteLine("invalid_command: not found");
+
+
     }
 
     else {
-      Console.WriteLine($"{command}: command not found");
+        Console.WriteLine($"{command}: command not found");
     }
      
  
