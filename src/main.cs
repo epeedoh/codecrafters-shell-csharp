@@ -20,8 +20,12 @@ while (true)
 
     //if (string.IsNullOrEmpty(command) || command.ToLower() == "exit 0")
     //    break;
+    if (string.IsNullOrEmpty(command) || command.ToLower() == "exit 0")
+        break;
+
     if (command.Contains("echo "))
     {
+        command = command.Replace("echo ", "");
           Console.WriteLine(command);
     }
        
@@ -30,8 +34,7 @@ while (true)
     }
      
 
-     if (string.IsNullOrEmpty(command) || command.ToLower() == "exit 0")
-        break;
+   
 
    // return;
 
