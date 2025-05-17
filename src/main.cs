@@ -36,7 +36,7 @@ while (true)
         if (existCommand != null)
             Console.WriteLine(command + " is a shell builtin");
         else
-            Console.WriteLine("invalid_command: not found");
+            Console.WriteLine(command + ": not found");
 
 
     }
