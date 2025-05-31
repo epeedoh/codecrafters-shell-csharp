@@ -36,7 +36,39 @@ while (true)
         if (existCommand != null)
             Console.WriteLine(command + " is a shell builtin");
         else
-            Console.WriteLine(command + ": not found");
+        {
+            string? pathEnv = Environment.GetEnvironmentVariable("PATH");
+            if(pathEnv !=null)
+            {
+                var paths = pathEnv.Split(';');
+                Console.WriteLine(paths);
+                Console.WriteLine(pathEnv);
+
+                bool found = false;
+
+                foreach (string path in paths)
+                {
+                    string fullPath = Path.Combine(path, command);
+                    if (File.Exists(fullPath) && (new FileInfo(fullPath).Attributes & FileAttributes.Directory) == 0)
+                    {
+                        Console.WriteLine($"{command} is {fullPath}");
+                        found = true;
+                        break;
+                    }
+                }
+
+                if(!found)
+                {
+                    Console.WriteLine($"{command}: not found");
+                }
+            }
+            else
+            {
+                Console.WriteLine("PATH variable not found");
+            }
+        }
+        //else
+        //    Console.WriteLine(command + ": not found");
 
 
     }
