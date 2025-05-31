@@ -40,9 +40,8 @@ while (true)
             string? pathEnv = Environment.GetEnvironmentVariable("PATH");
             if(pathEnv !=null)
             {
-                var paths = pathEnv.Split(';');
-                //Console.WriteLine(paths);
-                //Console.WriteLine(pathEnv);
+                //var paths = pathEnv.Split(';');
+                 var paths = pathEnv.Split(Path.PathSeparator);
 
                 bool found = false;
 
