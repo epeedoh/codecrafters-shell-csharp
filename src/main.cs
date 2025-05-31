@@ -41,8 +41,8 @@ while (true)
             if(pathEnv !=null)
             {
                 var paths = pathEnv.Split(';');
-                Console.WriteLine(paths);
-                Console.WriteLine(pathEnv);
+                //Console.WriteLine(paths);
+                //Console.WriteLine(pathEnv);
 
                 bool found = false;
 
